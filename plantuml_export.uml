@@ -1,0 +1,18 @@
+@startuml
+!theme plain
+
+start
+:Initialiseer bestandsnaam en schrijf_header;
+if (Bestand bestaat?) then (true)
+  :schrijf_header = False;
+else (false)
+  :schrijf_header = True;
+endif
+:Verzamel gegevens loop;
+while (Nog een werkdag toevoegen? is Ja) is (yes)
+  :Verzamel gegevens\n(Datum, Uren, Project, Opmerkingen);
+  :Sla op in CSV;
+endwhile (no)
+stop
+
+@enduml
